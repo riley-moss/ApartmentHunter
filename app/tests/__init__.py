@@ -30,3 +30,6 @@
 # leaseLength = main_info.find('td', class_="leaseLength").text.strip()
 # dateAvailable = main_info.find('td', class_="available").text.strip()
 # description = html_soup.find('section', class_="descriptionSection").find('p').text.strip()
+
+# apartment = Apartment('https://www.apartments.com/lakeview-3200-chicago-il/3qc6kde/',
+#                           '3200 N Clark St, Chicago, IL 60657', '$1,844 - 2,100')

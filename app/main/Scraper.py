@@ -1,7 +1,11 @@
 from bs4 import BeautifulSoup
 
+from app.main.Apartment import Apartment
+
 
 def get_html_text(url):
+    if url == '':
+        return ''
     return BeautifulSoup(open(url), 'html.parser')
 
 
