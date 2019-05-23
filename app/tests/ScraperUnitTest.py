@@ -18,6 +18,9 @@ class TestScraper(TestCase):
         html_soup = Scraper.get_html_text(self.fake_url)
         self.assertIs(type(html_soup), BeautifulSoup)
 
+    def test_givenBlankHTMLReturnEmptyList(self):
+        self.assertEqual([], Scraper.parse_soup_for_placards(""))
+
 
 if __name__ == '__main__':
     unittest_main()

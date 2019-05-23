@@ -3,3 +3,7 @@ from bs4 import BeautifulSoup
 
 def get_html_text(url):
     return BeautifulSoup(open(url), 'html.parser')
+
+
+def parse_soup_for_placards(html_soup):
+    return []
