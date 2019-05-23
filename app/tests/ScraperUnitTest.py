@@ -19,7 +19,7 @@ class TestScraper(TestCase):
         self.assertIs(type(html_soup), BeautifulSoup)
 
     def test_givenBlankHTMLReturnEmptyList(self):
-        self.assertEqual([], Scraper.parse_soup_for_placards(""))
+        self.assertEqual([], Scraper.parse_soup_for_placards(BeautifulSoup('', 'html.parser')))
 
 
 if __name__ == '__main__':
