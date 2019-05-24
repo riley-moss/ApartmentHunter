@@ -1,5 +1,5 @@
 from unittest import TestCase, main as unittest_main
-from app.main import Scraper
+from main import Scraper
 
 from bs4 import BeautifulSoup
 import os

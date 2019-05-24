@@ -70,3 +70,9 @@ fabric.properties
 # Virtual environment
 venv
 venv/*
+
+# Mac files
+.DS_Store
+
+# PyCache
+__pycache__/
