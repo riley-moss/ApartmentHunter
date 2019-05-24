@@ -1,19 +1,16 @@
 from bs4 import BeautifulSoup
+from requests import get
 
 from main.Apartment import Apartment
 
+headers = ({'User-Agent':
+                'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'})
 
-def get_html_text(url):
-    html_file = None
-    try:
-        html_file = open(url, 'r')
-        html_soup = BeautifulSoup(html_file, 'html.parser')
-    except FileNotFoundError:
-        html_soup = ''
-    finally:
-        if html_file is not None:
-            html_file.close()
 
+def get_html_text(response):
+    if response == '':
+        return ''
+    html_soup = BeautifulSoup(response, 'html.parser')
     return html_soup
 
 
