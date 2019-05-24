@@ -17,8 +17,7 @@ def get_html_text(response):
 def parse_soup_for_placards(html_soup):
     apartment_list = []
     placards = html_soup.find_all('article', class_="placard")
-    if len(placards) > 0:
-        apartment = placards[0]
+    for apartment in placards:
         url = apartment.get('data-url')
         location = apartment.find('div', class_="location").text
         rent = apartment.find('span', class_="altRentDisplay").text

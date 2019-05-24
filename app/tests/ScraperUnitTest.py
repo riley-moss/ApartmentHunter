@@ -32,6 +32,11 @@ class TestScraper(ut.TestCase):
         self.assertEqual(self.test_apartment.location, apartment.location)
         self.assertEqual(self.test_apartment.rent, apartment.rent)
 
+    def test_givenHTMLWithMultipleApartmentPlacardsReturnListWithMultipleApartments(self):
+        html_soup = Scraper.get_html_text(self.test_response)
+        apartments = Scraper.parse_soup_for_placards(html_soup)
+        self.assertEqual(3, len(apartments))
+
     def tearDown(self):
         self.test_response.close()
 
